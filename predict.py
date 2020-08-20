@@ -1,4 +1,5 @@
 from sklearn.linear_model import LogisticRegression
+from sklearn.ensemble import RandomForestClassifier
 import pandas as pd
 from sklearn.metrics import precision_score, recall_score, accuracy_score
 import json
@@ -24,6 +25,7 @@ y_train = y[0:100]
 X_test = X[100:]
 y_test = y[100:]
 
+
 LR = LogisticRegression()
 LR = LR.fit(X_train, y_train)
 
@@ -35,5 +37,5 @@ preds = LR.predict(X_test)
 p = accuracy_score(y_test, preds)
 
 
-with open('Metrics/metrics.json','w') as jsonfile:
+with open('Metrics/metrics1.json','w') as jsonfile:
     json.dump(dict(accuracy=p), jsonfile)
