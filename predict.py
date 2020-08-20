@@ -3,6 +3,8 @@ import pandas as pd
 from sklearn.metrics import precision_score, recall_score, accuracy_score
 import json
 import random
+import pickle
+
 
 df = pd.read_csv('data/Train_set.csv')
 df = df[['0','1','2']]
@@ -23,7 +25,10 @@ X_test = X[100:]
 y_test = y[100:]
 
 LR = LogisticRegression()
-LR.fit(X_train, y_train)
+LR = LR.fit(X_train, y_train)
+
+with open('data/models/model.pickle','wb') as f:
+    pickle.dump(LR, f)
 
 preds = LR.predict(X_test)
 

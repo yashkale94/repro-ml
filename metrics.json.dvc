@@ -1,0 +1,11 @@
+md5: 8ce781a499f2abb2063aa8f2e658326f
+cmd: python predict.py
+deps:
+- md5: 0a345ff15150583832c62a850496629a
+  path: predict.py
+outs:
+- md5: 2b4f6b38ecf6e23ac7803c59f682ea4b
+  path: Metrics/metrics.json
+  cache: false
+  metric: true
+  persist: false
