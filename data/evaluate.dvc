@@ -8,5 +8,5 @@ outs:
 - md5: a1eec9ed9d7c11c93476a918b4d112b3
   path: Metrics/metrics1.json
   cache: false
-  metric: true
+  metric:
   persist: false
