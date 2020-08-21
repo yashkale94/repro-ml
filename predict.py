@@ -26,7 +26,7 @@ X_test = X[100:]
 y_test = y[100:]
 
 
-LR = LogisticRegression()
+LR = RandomForestClassifier()
 LR = LR.fit(X_train, y_train)
 
 with open('data/models/model.pickle','wb') as f:
