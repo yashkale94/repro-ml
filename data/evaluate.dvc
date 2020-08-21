@@ -1,0 +1,17 @@
+md5: 8d2a1a0ffc7f8fe12778ff72dfc49bc9
+cmd: python predict.py
+wdir: ..
+deps:
+- md5: 1abd3889b9eacd1514ed4f154b1a2156
+  path: predict.py
+outs:
+- md5: eac1f72515af77428dfd468bd7c098fc.dir
+  path: models
+  cache: true
+  metric: false
+  persist: false
+- md5: b9be6750a6cf1bc3376036885808a129
+  path: Metrics/metrics.json
+  cache: false
+  metric: true
+  persist: false

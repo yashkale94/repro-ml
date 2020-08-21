@@ -5,7 +5,7 @@ from sklearn.metrics import precision_score, recall_score, accuracy_score
 import json
 import random
 import pickle
-
+import os
 
 df = pd.read_csv('data/Train_set.csv')
 df = df[['0','1','2']]
@@ -29,7 +29,9 @@ y_test = y[100:]
 LR = RandomForestClassifier()
 LR = LR.fit(X_train, y_train)
 
-with open('data/models/model.pickle','wb') as f:
+if 'models' not in os.listdir('.'):
+    os.mkdir('models')
+with open('models/model.pickle','wb') as f:
     pickle.dump(LR, f)
 
 preds = LR.predict(X_test)
@@ -37,5 +39,5 @@ preds = LR.predict(X_test)
 p = accuracy_score(y_test, preds)
 
 
-with open('Metrics/metrics1.json','w') as jsonfile:
+with open('Metrics/metrics.json','w') as jsonfile:
     json.dump(dict(accuracy=p), jsonfile)
