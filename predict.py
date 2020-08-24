@@ -26,7 +26,7 @@ X_test = X[100:]
 y_test = y[100:]
 
 
-LR = LogisticRegression(C=0.1)
+LR = LogisticRegression(C=100)
 LR = LR.fit(X_train, y_train)
 
 if 'models' not in os.listdir('.'):
